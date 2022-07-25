@@ -1,0 +1,10 @@
+
+train: D:/company/py/yolo/datasets/realsense_cups/images/train
+val: D:/company/py/yolo/datasets/realsense_cups/images/val
+
+
+
+# Classes
+nc: 1  # number of classes
+names: ['XReaLab_cup']  # class names
+
