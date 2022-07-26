@@ -27,7 +27,7 @@ def move_1():
         robot_pos = erobot.get_coords()
         A = camera_coordinate_4d
         # position = [robot_pos[0], robot_pos[1] + A[0], robot_pos[2] - A[1], initP[3], initP[4], initP[5]]  # 桌子用这个
-        position = [robot_pos[0] + A[0], robot_pos[1] - A[1], robot_pos[2], initP[3], initP[4], initP[5]]  # 小车用这个
+        position = [robot_pos[0] + A[0], robot_pos[1] , robot_pos[2]- A[1], initP[3], initP[4], initP[5]]  # 小车用这个
         # print('末端需要移动到的位置：\n', position)
         erobot.set_coords(position, 2000)
         time.sleep(3)  # 此处不能用wait_command_done()，不然后台会被冻结
@@ -93,8 +93,8 @@ def dectshow(org_img, boxs, depth_data, intrin):
         # print("end坐标系：", end_to_rviz @ rviz_to_cam_f(euler) @ camera_coordinate_4d)
         # global erobot
         # print("机器人末端位置：", erobot.get_coords())
-        # print("base_coordinate_4d:", base_coordinate_4d)
-        # print("----------------------------------\n")
+        print("base_coordinate_4d:", base_coordinate_4d)
+        print("----------------------------------\n")
 
         text_pixel = str((int(box[0]) + int(box[2])) // 2) + ', ' + str((int(box[1]) + int(box[3])) // 2) + '(pixel)'
         text_camera = str(camera_coordinate_3d[0] * 1000)[:4] + ', ' + str(camera_coordinate_3d[1] * 1000)[:4] + '(mm)'
